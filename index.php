@@ -18,7 +18,7 @@
     <header>
         <h2>Header</h2>
     </header>
-    <div class="container">
+    <div id="products" class="container">
       <div class="row">
         <?php foreach (getItems(1, 4) as $item): ?>
             <div class="col-md-3 col-xs-6">
@@ -54,8 +54,11 @@
         <?php endforeach; ?>
       </div>
 
+    </div>
+
+    <div class="container">
       <div class="row row--load_more">
-          <button  class="btn">Load more</button>
+        <button id="load_more" class="btn load_more">Load more</button>
       </div>
     </div>
 
@@ -64,5 +67,6 @@
     </footer>
 
     <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
