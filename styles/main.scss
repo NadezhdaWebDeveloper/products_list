@@ -1,0 +1,145 @@
+// variables:
+$white: #fff;
+$black: #000;
+$red: #cb1818;
+
+*{
+  outline: none;
+}
+
+body{
+  background-color: #eeeeee;
+  font : {
+    size: 14px;
+    family: 'Ubuntu';
+  }
+
+  .container{
+    background-color: $white;
+    .row{
+      @media (max-width: 500px){
+        .col-xs-6{
+          width: 100%;
+        }
+      }
+
+      &.row--load_more{
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .btn{
+        border: 1px solid #e4e4e4;
+        border-radius: 0;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        background-color: transparent;
+        color: $red;
+        text-align: center;
+        font-size: .9em;
+        line-height: 2;
+
+        &.btn:hover{
+          background-color: #d78d8d;
+        }
+        &.btn--view{
+          background-color: #d8d8d8;
+          color: #999d9e;
+
+          &:hover{
+            background-color: #9e9e9e;
+            color: $white;
+          }
+        }
+      }
+
+      .card{
+        position: relative;
+        border: 1px solid #e4e4e4;
+        margin-top: 50px;
+        padding: 10px;
+        &:hover{
+          box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.35);
+        }
+
+        .card__img{
+          position: relative;
+          top: -30px;
+          background-color: $white;
+          height: 250px;
+          border: 1px solid #e4e4e4;
+
+          img{
+            max-height: 100%;
+            max-width: 100%;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+          }
+        }
+
+        .card__title{
+          font-size: 1.2em;
+          font-weight: 500;
+          color: #363636;
+        }
+
+        .card__descr{
+            font-size: .9em;
+            color: #a3a3a3;
+            padding: 15px 0;
+        }
+        .card__price{
+          margin-bottom: 20px;
+
+          .card__price__discount{
+            color: $black;
+            font-size: 1.8em;
+            text-transform: uppercase;
+          }
+
+          .card__price__cost{
+            color: $red;
+            font-size: 1.25em;
+            padding: 0 10px;
+            text-decoration: line-through;
+            text-transform: uppercase;
+          }
+        }
+
+        .card__info{
+          position: absolute;
+          top: 100px;
+          color: $white;
+          padding: 10px 20px;
+        }
+        .card__info--new{
+          background-color: $black;
+          right: 10px;
+        }
+        .card__info--sale{
+          background-color: $red;
+        }
+
+        .card__btns{
+          overflow: auto;
+
+          .btn{
+            width: calc(50% - 5px);
+          }
+          .btn--add{
+            float: left;
+          }
+          .btn--view{
+            float: right;
+          }
+        }
+
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@ return [
         'cost' => 249,
         'discountCost' => 199,
         'new' => true,
-        'img'  => '/img/img_product.png',
+        'img'  => '/img/img_product_1.png',
     ],
     [
         'title' => 'test title 2',
@@ -15,7 +15,7 @@ return [
         'cost' => 249,
         'discountCost' => null,
         'new' => false,
-        'img'  => '/img/img_product.png',
+        'img'  => '/img/img_product_2.png',
     ],
     [
         'title' => 'test title 3',
@@ -23,7 +23,7 @@ return [
         'cost' => 125,
         'new' => true,
         'discountCost' => null,
-        'img'  => '/img/img_product.png',
+        'img'  => '/img/img_product_3.png',
     ],
     [
         'title' => 'test title 4',
@@ -31,7 +31,7 @@ return [
         'cost' => 111,
         'discountCost' => 90,
         'new' => false,
-        'img'  => '/img/img_product.png',
+        'img'  => '/img/img_product_4.png',
     ],
     [
         'title' => 'test title 5',
@@ -39,7 +39,7 @@ return [
         'cost' => 249,
         'discountCost' => null,
         'new' => true,
-        'img'  => '/img/img_product.png',
+        'img'  => '/img/img_product_5.png',
     ],
     [
         'title' => 'test title 6',
@@ -47,7 +47,7 @@ return [
         'cost' => 249,
         'discountCost' => null,
         'new' => true,
-        'img'  => '/img/img_product.png',
+        'img'  => '/img/img_product_6.png',
     ],
     [
         'title' => 'test title 7',
@@ -55,7 +55,7 @@ return [
         'cost' => 249,
         'discountCost' => null,
         'new' => false,
-        'img'  => '/img/img_product.png',
+        'img'  => '/img/img_product_7.png',
     ],
     [
         'title' => 'test title 8',
@@ -63,7 +63,7 @@ return [
         'cost' => 249,
         'discountCost' => null,
         'new' => false,
-        'img'  => '/img/img_product.png',
+        'img'  => '/img/img_product_8.png',
     ],
     [
         'title' => 'test title 9',
