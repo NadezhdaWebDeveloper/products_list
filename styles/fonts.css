@@ -1,0 +1,23 @@
+/* Raleway */
+@font-face {
+  font-family: Raleway;
+  src: url(./fonts/Raleway-Medium.ttf);
+  font-weight: 500;
+}
+
+/* Ubuntu */
+@font-face {
+  font-family: Ubuntu;
+  src: url(./fonts/Ubuntu-Light.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: Ubuntu;
+  src: url(./fonts/Ubuntu-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: Ubuntu;
+  src: url(./fonts/Ubuntu-Medium.ttf);
+  font-weight: 500;
+}
