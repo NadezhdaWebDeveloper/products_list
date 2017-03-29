@@ -1,7 +1,6 @@
 $(function() {
   var $products = $('#products'),
       $btn_load_more = $('#btn_load_more'),
-      callLoader = false,
       defaultProductsQty = 4,
       totalNow = 4,
       total = 4,
@@ -46,10 +45,14 @@ $(function() {
           '</div>'
       });
 
+      if ($products.find('.row--hidden').length > 0 && totalNow === total) {
+        $('#btn_load_more').closest('.rowLoadMore').remove();
+      }
+
       totalNow += data.entities.length;
       total = data.total;
 
-      if ($products.find('.row--hidden').length > 0) {
+      if ($products.find('.row--hidden').length === 1) {
         $products.find('.row--hidden').fadeIn(1000);
         $btn_load_more.removeClass('loading');
       }
@@ -65,6 +68,7 @@ $(function() {
 
   $('body').on('click', '#btn_load_more', function(e){
     e.preventDefault();
+
     if ($products.find('.row--hidden').length === 0) {
       $btn_load_more.addClass('loading');
     }
@@ -75,6 +79,9 @@ $(function() {
 
     if ($products.find('.row--hidden').length === 1) {
       $products.find('.row--hidden').fadeIn(1000).removeClass('row--hidden');
+      if (totalNow === total) {
+        $('#btn_load_more').closest('.rowLoadMore').remove();
+      }
     }
 
     if ( (totalNow === total && total !== defaultProductsQty) || totalNow > total ) {
