@@ -57,8 +57,10 @@
     </div>
 
     <div id="rowLoadMore" class="rowLoadMore container">
-      <img class="gif_loader" src="../img/loader.gif">
-      <button id="btn_load_more" class="btn load_more"><span>Load more</span></button>
+      <button id="btn_load_more" class="btn load_more">
+        <img class="gif_loader" src="../img/loader.gif" />
+        <span>Load more</span>
+      </button>
     </div>
 
 

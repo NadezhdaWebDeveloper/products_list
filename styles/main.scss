@@ -27,7 +27,7 @@ body{
     text-align: center;
 
     img.gif_loader{
-      width: 22px;
+      width: 45px;
       display: none;
     }
   }
@@ -45,12 +45,8 @@ body{
     line-height: 2;
 
     &:hover{
-      background-color: #d78d8d;
-    }
-
-    &[disabled="disabled"],
-    &[disabled="disabled"]:hover{
-      background-color: #eee;
+      background-color: $red;
+      color: $white;
     }
 
     &.btn--view{
@@ -62,19 +58,41 @@ body{
         color: $white;
       }
     }
+
     &.load_more{
       margin: 30px 0;
-      // -moz-transform: rotate(15deg); /* Для Firefox */
-      // -ms-transform: rotate(15deg); /* Для IE */
-      // -webkit-transform: rotate(15deg); /* Для Safari, Chrome, iOS */
-      // -o-transform: rotate(15deg); /* Для Opera */
-      // transform: rotate(15deg);
+
+      .gif_loader{
+        display: none;
+      }
+      span{
+        display: inline-block;
+      }
+
+      &.loading{
+        border-color: transparent;
+        padding: 0;
+
+        &:hover{
+          background-color: transparent;
+          cursor: auto;
+        }
+
+        .gif_loader{
+          display: inline-block;
+        }
+
+        span{
+          display: none;
+        }
+      }
     }
   }
 
   .container{
     background-color: $white;
     padding: 0 15px 15px;
+
     .row{
       @media (max-width: 500px){
         .col-xs-6{

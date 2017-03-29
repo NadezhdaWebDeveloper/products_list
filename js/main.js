@@ -1,12 +1,14 @@
 $(function() {
-  var $products = $('#products');
+  var $products = $('#products'),
+      $btn_load_more = $('#btn_load_more'),
+      callLoader = false,
       defaultProductsQty = 4,
       totalNow = 4,
       total = 4,
       page = 2,
       per_page = 4;
 
-  function load_more(page, per_page, clicked){
+  function loadMore(page, per_page){
 
     $.ajax({
       method: "GET",
@@ -47,8 +49,9 @@ $(function() {
       totalNow += data.entities.length;
       total = data.total;
 
-      if ($products.find('.row.row--hidden').length > 0) {
-        $products.find('.row.row--hidden').fadeIn(2000);
+      if ($products.find('.row--hidden').length > 0) {
+        $products.find('.row--hidden').fadeIn(1000);
+        $btn_load_more.removeClass('loading');
       }
       $products.append('<div class="row row--hidden">'+ newRow +'</div>');
 
@@ -57,26 +60,29 @@ $(function() {
     });
   }
 
-
-  load_more(page, per_page, false);
+  loadMore(page, per_page);
   page++;
 
   $('body').on('click', '#btn_load_more', function(e){
     e.preventDefault();
+    if ($products.find('.row--hidden').length === 0) {
+      $btn_load_more.addClass('loading');
+    }
 
-    $products.find('.row.row--hidden').fadeIn(2000);
-    
+    if ($products.find('.row--hidden').length > 1) {
+      $($products.find('.row--hidden')[0]).removeClass('row--hidden');
+    }
+
+    if ($products.find('.row--hidden').length === 1) {
+      $products.find('.row--hidden').fadeIn(1000).removeClass('row--hidden');
+    }
+
     if ( (totalNow === total && total !== defaultProductsQty) || totalNow > total ) {
       $('#btn_load_more').closest('.rowLoadMore').remove();
     }else{
-      load_more(page, per_page);
+      loadMore(page, per_page);
       page++;
     }
 
   });
-
-
-
-
-
 });
