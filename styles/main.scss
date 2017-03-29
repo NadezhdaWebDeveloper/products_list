@@ -10,28 +10,18 @@ $mainText: #a3a3a3;
   outline: none;
 }
 
-.row--hidden{
-  display: none;
-}
-
-.animated {
-  transition-property: height;
-  transition-duration: 3s;
-}
-
 body{
   background-color: #eeeeee;
+  color: $mainText;
   font : {
     size: 14px;
     family: 'Ubuntu';
+    weight: 400;
   }
 
   header{
     background-color: $red;
     color: $white;
-    .container{
-      background-color: $red;
-    }
   }
 
   .rowLoadMore{
@@ -96,11 +86,16 @@ body{
     }
   }
 
-  .container{
+  .content{
+    background-color: $white;
+    padding: 0 15px 15px;
+  }
+
+  .productsWrap{
     background-color: $white;
     padding: 0 15px 15px;
 
-    .row{
+    .productsWrap__row{
       @media (max-width: 500px){
         .col-xs-6{
           width: 100%;
@@ -168,7 +163,6 @@ body{
 
         .card__descr{
             font-size: .9em;
-            color: $mainText;
             padding: 15px 0;
         }
         .card__price{
@@ -229,23 +223,23 @@ body{
 
     li{
       list-style-type: none;
-      margin: 5px 0;
+      padding: 5px 0;
 
       i{
         color: $red;
-        margin-right: 5px;
-        font-size: .95em;
+        margin-right: 10px;
       }
     }
   }
 
   footer{
+    border-bottom: 18px solid $red;
+
     .footerCard{
       border: 1px solid $borderColor;
       padding: 24px;
       margin: 15px 0;
       min-height: 330px;
-      color: $mainText;
 
       &.storeInfo{
         i{
@@ -255,32 +249,33 @@ body{
         }
 
         li{
-          margin: 10px 0;
+          padding: 10px 0;
+          line-height: 1.5em;
         }
       }
 
       h3{
         text-transform: uppercase;
         font-family: 'Raleway';
-        font-size: 1.43em;;
+        font-size: 1.43em;
         color: $blackText;
+      }
+
+      p, li, li i{
+        font-size: .95em;
+        line-height: 1;
       }
 
       p{
         margin: 0;
+        line-height: 1.5em;
       }
 
-      ul, li{
+      li{
         overflow: auto;
-      }
-
-      p, li{
-        font-size: .9em;
 
         span{
           float: left;
-          display: inline-table;
-          overflow: auto;
 
           i{
             display: inline-block;
@@ -294,5 +289,4 @@ body{
       }
     }
   }
-
 }

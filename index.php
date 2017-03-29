@@ -22,8 +22,8 @@
       </div>
     </header>
 
-    <div id="products" class="container">
-      <div class="row">
+    <div id="products" class="container content productsWrap">
+      <div class="row productsWrap__row">
         <?php foreach (getItems(1, 4) as $item): ?>
             <div class="col-md-3 col-xs-6">
               <div class="card">
@@ -59,7 +59,7 @@
       </div>
     </div>
 
-    <div id="rowLoadMore" class="rowLoadMore container">
+    <div id="rowLoadMore" class="rowLoadMore container content">
       <button id="btn_load_more" class="btn load_more">
         <img class="gif_loader" src="../img/loader.gif" />
         <span>Load more</span>
@@ -67,7 +67,7 @@
     </div>
 
     <footer>
-      <div class="container">
+      <div class="container content">
         <div class="row">
           <div class="col-sm-4">
             <div class="footerCard">

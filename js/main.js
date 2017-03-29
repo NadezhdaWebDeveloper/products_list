@@ -56,7 +56,7 @@ $(function() {
         $products.find('.row--hidden').fadeIn(1000);
         $btn_load_more.removeClass('loading');
       }
-      $products.append('<div class="row row--hidden">'+ newRow +'</div>');
+      $products.append('<div class="row productsWrap__row row--hidden">'+ newRow +'</div>');
 
     }).fail(function(data) {
       console.log('fail');
