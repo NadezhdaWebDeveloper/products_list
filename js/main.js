@@ -1,11 +1,12 @@
 $(function() {
-  var totalNow = 4,
+  var $products = $('#products');
+      defaultProductsQty = 4,
+      totalNow = 4,
       total = 4,
       page = 2,
       per_page = 4;
 
-
-  function load_more(page=2, per_page=4){
+  function load_more(page=2, per_page=4, clicked=true){
     $.ajax({
       method: "GET",
       url: "list.php",
@@ -16,10 +17,8 @@ $(function() {
       }
     }).done(function(data) {
       console.log('done');
-      console.log(data);
 
       var newRow = '';
-
       $.each(data.entities, function(i, val) {
         var card__price__discount = val.discountCost ? val.discountCost : val.cost,
             card__price__cost = val.discountCost !== null ? '<span class="card__price__cost">$' + val.cost + '</span><div class="card__info card__info--sale">Sale</div>' : '',
@@ -47,35 +46,30 @@ $(function() {
       totalNow += data.entities.length;
       total = data.total;
 
-      $('#products').append('<div class="row hidden"></div>');
-      $('#products .row:last-of-type').append(newRow);
-      $('#load_more').removeAttr('disabled').text('Load more');
+      if ($products.find('.row.hidden').length > 0) {
+        $products.find('.row.hidden').removeClass('hidden');
+      }
+      $products.append('<div class="row hidden">'+ newRow +'</div>');
 
     }).fail(function(data) {
       console.log('fail');
     });
   }
 
-  load_more(page, per_page);
+
+  load_more(page, per_page, false);
   page++;
 
-  $('body').on('click', '#load_more', function(e){
+  $('body').on('click', '#btn_load_more', function(e){
     e.preventDefault();
 
-    $('#products .row:last-of-type').removeClass('hidden');
+    $products.find('.row:last-of-type').removeClass('hidden');
 
-    if ( (totalNow === total && total !== 4) || totalNow > total ) {
-      $('#load_more').closest('.container').remove();
-    }else if (total === 4) {
-      $('#load_more').attr('disabled', 'disabled').text('loading');
-      setTimeout(function(){
-        $('#products .row:last-of-type').removeClass('hidden');
-          $('#load_more').removeAttr('disabled').text('Load more');
-      }, 5000);
-      load_more(page, per_page);
+    if ( (totalNow === total && total !== defaultProductsQty) || totalNow > total ) {
+      $('#btn_load_more').closest('.rowLoadMore').remove();
     }else{
-      $('#load_more').attr('disabled', 'disabled').text('loading');
       load_more(page, per_page);
+      page++;
     }
 
   });

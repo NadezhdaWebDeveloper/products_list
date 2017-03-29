@@ -18,6 +18,7 @@
     <header>
         <h2>Header</h2>
     </header>
+
     <div id="products" class="container">
       <div class="row">
         <?php foreach (getItems(1, 4) as $item): ?>
@@ -53,14 +54,13 @@
             </div>
         <?php endforeach; ?>
       </div>
-
     </div>
 
-    <div class="container">
-      <div class="row row--load_more">
-        <button id="load_more" class="btn load_more">Load more</button>
-      </div>
+    <div id="rowLoadMore" class="rowLoadMore container">
+      <img class="gif_loader" src="../img/loader.gif">
+      <button id="btn_load_more" class="btn load_more"><span>Load more</span></button>
     </div>
+
 
     <footer>
         <h2>Footer</h2>
