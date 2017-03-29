@@ -12,11 +12,14 @@
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/bootstrap-grid/bootstrap.min.css">
     <link rel="stylesheet" href="styles/bootstrap-grid/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <header>
+      <div class="container">
         <h2>Header</h2>
+      </div>
     </header>
 
     <div id="products" class="container">
@@ -64,7 +67,47 @@
     </div>
 
     <footer>
-        <h2>Footer</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="footerCard">
+              <h3>Hot offers</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <ul>
+                <li><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span>Lorem ipsum dolor sit amet.</span></li>
+                <li><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span>consectetur adipisicing elit</span></li>
+                <li><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span>Sed do eiusmod adipisicing elit</span></li>
+                <li><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span>Lorem ipsum dolor sit amet.</span></li>
+                <li><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span>consectetur adipisicing elit</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="footerCard">
+              <h3>Hot offers</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <ul>
+                <li><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span>Lorem ipsum dolor sit amet.</span></li>
+                <li><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span>consectetur adipisicing elit</span></li>
+                <li><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span>Sed do eiusmod adipisicing elit</span></li>
+                <li><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span>Lorem ipsum dolor sit amet.</span></li>
+                <li><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span>consectetur adipisicing elit</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="footerCard storeInfo">
+              <h3>Store information</h3>
+              <ul>
+                <li><span><i class="fa fa-map-marker" aria-hidden="true"></i></span><span> Company Inc., 8901 Marmora Road, Glasgow, D04 89GR </span></li>
+                <li><span><i class="fa fa-phone" aria-hidden="true"></i></span><span> Call us now toll free: (800) 2345-6789 </span></li>
+                <li><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span><span> Customer support: support@example.com Press: pressroom@example. </span></li>
+                <li><span><i class="fa fa-skype" aria-hidden="true"></i></span><span> Skype: sample-username </span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="js/jquery-3.2.0.min.js"></script>

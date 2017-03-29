@@ -2,6 +2,9 @@
 $white: #fff;
 $black: #000;
 $red: #cb1818;
+$borderColor: #e4e4e4;
+$blackText: #333;
+$mainText: #a3a3a3;
 
 *{
   outline: none;
@@ -23,6 +26,14 @@ body{
     family: 'Ubuntu';
   }
 
+  header{
+    background-color: $red;
+    color: $white;
+    .container{
+      background-color: $red;
+    }
+  }
+
   .rowLoadMore{
     text-align: center;
 
@@ -33,7 +44,7 @@ body{
   }
 
   .btn{
-    border: 1px solid #e4e4e4;
+    border: 1px solid $borderColor;
     border-radius: 0;
     font-weight: 500;
     text-transform: uppercase;
@@ -124,7 +135,7 @@ body{
 
       .card{
         position: relative;
-        border: 1px solid #e4e4e4;
+        border: 1px solid $borderColor;
         margin-top: 50px;
         padding: 10px;
 
@@ -133,7 +144,7 @@ body{
           top: -30px;
           background-color: $white;
           height: 250px;
-          border: 1px solid #e4e4e4;
+          border: 1px solid $borderColor;
 
           img{
             padding: 10px;
@@ -152,19 +163,19 @@ body{
         .card__title{
           font-size: 1.2em;
           font-weight: 500;
-          color: #363636;
+          color: $blackText;
         }
 
         .card__descr{
             font-size: .9em;
-            color: #a3a3a3;
+            color: $mainText;
             padding: 15px 0;
         }
         .card__price{
           margin-bottom: 20px;
 
           .card__price__discount{
-            color: $black;
+            color: $blackText;
             font-size: 1.8em;
             text-transform: uppercase;
           }
@@ -212,4 +223,76 @@ body{
       }
     }
   }
+
+  ul{
+    padding: 0;
+
+    li{
+      list-style-type: none;
+      margin: 5px 0;
+
+      i{
+        color: $red;
+        margin-right: 5px;
+        font-size: .95em;
+      }
+    }
+  }
+
+  footer{
+    .footerCard{
+      border: 1px solid $borderColor;
+      padding: 24px;
+      margin: 15px 0;
+      min-height: 330px;
+      color: $mainText;
+
+      &.storeInfo{
+        i{
+          font-size: 2em;
+          width: 24px;
+          text-align: center;
+        }
+
+        li{
+          margin: 10px 0;
+        }
+      }
+
+      h3{
+        text-transform: uppercase;
+        font-family: 'Raleway';
+        font-size: 1.43em;;
+        color: $blackText;
+      }
+
+      p{
+        margin: 0;
+      }
+
+      ul, li{
+        overflow: auto;
+      }
+
+      p, li{
+        font-size: .9em;
+
+        span{
+          float: left;
+          display: inline-table;
+          overflow: auto;
+
+          i{
+            display: inline-block;
+            float: left;
+          }
+
+          &:last-of-type{
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+
 }
