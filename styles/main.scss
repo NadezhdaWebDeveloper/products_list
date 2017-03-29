@@ -7,22 +7,13 @@ $red: #cb1818;
   outline: none;
 }
 
-.hidden{
+.row--hidden{
   display: none;
 }
 
 .animated {
   transition-property: height;
   transition-duration: 3s;
-}
-
-
-  // -webkit-transition: all 5s ease-in-out;
-  // -o-transition: all 5s ease-in-out;
-  // transition: all 5s ease-in-out;
-
-#test{
-  display: none;
 }
 
 body{

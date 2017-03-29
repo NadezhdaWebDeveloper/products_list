@@ -6,7 +6,8 @@ $(function() {
       page = 2,
       per_page = 4;
 
-  function load_more(page=2, per_page=4, clicked=true){
+  function load_more(page, per_page, clicked){
+
     $.ajax({
       method: "GET",
       url: "list.php",
@@ -46,10 +47,10 @@ $(function() {
       totalNow += data.entities.length;
       total = data.total;
 
-      if ($products.find('.row.hidden').length > 0) {
-        $products.find('.row.hidden').removeClass('hidden');
+      if ($products.find('.row.row--hidden').length > 0) {
+        $products.find('.row.row--hidden').fadeIn(2000);
       }
-      $products.append('<div class="row hidden">'+ newRow +'</div>');
+      $products.append('<div class="row row--hidden">'+ newRow +'</div>');
 
     }).fail(function(data) {
       console.log('fail');
@@ -63,8 +64,8 @@ $(function() {
   $('body').on('click', '#btn_load_more', function(e){
     e.preventDefault();
 
-    $products.find('.row:last-of-type').removeClass('hidden');
-
+    $products.find('.row.row--hidden').fadeIn(2000);
+    
     if ( (totalNow === total && total !== defaultProductsQty) || totalNow > total ) {
       $('#btn_load_more').closest('.rowLoadMore').remove();
     }else{
